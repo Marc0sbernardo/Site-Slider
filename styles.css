@@ -33,6 +33,7 @@ header a {
     width: 100vw;
     margin-top: -50px;
     overflow: hidden;
+    position: relative;
 }
 
 .container .list .list-item {

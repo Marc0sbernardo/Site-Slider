@@ -5,18 +5,21 @@ let container = document.querySelector('.container')
 let list = document.querySelector('.container .list')
 let thumb = document.querySelector('.container .thumb')
 
-btnNext.OnClick = () => moveItemsOnClick('next')
-btnBack.OnClick = () => moveItemsOnClick('back')
+
+btnNext.onclick = () => moveItemsOnClick('next')
+btnBack.onclick = () => moveItemsOnClick('back')
 
 function moveItemsOnClick(type){
-    let ListItems = document.querySelectorAll('.list .list-item')
-    let ThumbItems = document.querySelectorAll('.thumb .thumb-item')
+    let listItems = document.querySelectorAll('.list .list-item')
+    let thumbItems = document.querySelectorAll('.thumb .thumb-item')
 
     if(type === 'next'){
-        list.appendChild(listItems[0])
-        thumb.appendChild(thumbItems[0])
-    }else {
-
+        list.appendChild(listItems[1])
+        thumb.appendChild(thumbItems[1])
+    }else{
+        list.prepend(listItems[listItems.length - 1])
+        thumb.prepend(thumbItems[thumbItems.length - 1])
+        
     }
-    
 }
+  
